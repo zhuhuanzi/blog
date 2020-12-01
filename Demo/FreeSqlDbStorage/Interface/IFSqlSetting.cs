@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
 using FreeSql.Aop;
 using System.Data.Common;
 using DbStorage.Impl;

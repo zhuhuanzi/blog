@@ -1,9 +1,6 @@
 using DbStorage.Interface;
 using FreeSql;
-using FreeSqlDbStorage.Impl;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FreeSqlDbStorage.Interface
 {

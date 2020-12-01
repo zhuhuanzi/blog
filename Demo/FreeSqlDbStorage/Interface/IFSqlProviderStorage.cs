@@ -4,7 +4,6 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FreeSqlDbStorage.Interface
 {
@@ -47,7 +46,7 @@ namespace FreeSqlDbStorage.Interface
 
         public IFSqlProvider GetByName(string name, string defaultName)
         {
-            IFSqlProvider result = null;
+            IFSqlProvider result;
 
             if (name == null)
             {
@@ -72,7 +71,7 @@ namespace FreeSqlDbStorage.Interface
                 return;
             }
 
-            this.DataMap.Remove(name, out IFSqlProvider result);
+            this.DataMap.Remove(name, out _);
         }
     }
 }

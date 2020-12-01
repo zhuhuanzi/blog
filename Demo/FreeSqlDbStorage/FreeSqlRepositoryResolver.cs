@@ -3,10 +3,6 @@ using FreeSql;
 using FreeSqlDbStorage.Impl;
 using FreeSqlDbStorage.Interface;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace FreeSqlDbStorage
 {
@@ -14,19 +10,21 @@ namespace FreeSqlDbStorage
     {
 
 
+        // ReSharper disable once InconsistentNaming
         protected readonly IServiceProvider _serviceProvider;
 
-        protected readonly IFSqlProviderStorage _fsqlProviderStorage;
+        // ReSharper disable once InconsistentNaming
+        protected readonly IFSqlProviderStorage _freeSqlProviderStorage;
 
         public IRelationalDatabaseProcessorStorage RelationalDatabaseProcessorStorage { get; private set; }
 
         public IPartitionTableNameFactory PartitionTableNameFactory { get; private set; }
 
 
-        public FreeSqlRepositoryResolver(IServiceProvider serviceProvider, IFSqlProviderStorage fsqlProviderStorage, IRelationalDatabaseProcessorStorage relationalDatabaseProcessorStorage, IPartitionTableNameFactory partitionTableNameFactory)
+        public FreeSqlRepositoryResolver(IServiceProvider serviceProvider, IFSqlProviderStorage freeSqlProviderStorage, IRelationalDatabaseProcessorStorage relationalDatabaseProcessorStorage, IPartitionTableNameFactory partitionTableNameFactory)
         {
             _serviceProvider = serviceProvider;
-            _fsqlProviderStorage = fsqlProviderStorage;
+            _freeSqlProviderStorage = freeSqlProviderStorage;
             RelationalDatabaseProcessorStorage = relationalDatabaseProcessorStorage;
             PartitionTableNameFactory = partitionTableNameFactory;
         }
@@ -38,7 +36,7 @@ namespace FreeSqlDbStorage
         /// <returns></returns>
         public IFreeSql GetFreeSql(string name = null)
         {
-            return this._fsqlProviderStorage.GetByName(name,  FreeSqlDbStorageConsts.DefaultProviderName).FSql;
+            return this._freeSqlProviderStorage.GetByName(name,  FreeSqlDbStorageConsts.DefaultProviderName).FSql;
         }
 
 
@@ -76,6 +74,7 @@ namespace FreeSqlDbStorage
         /// <param name="freeSqlName"></param>
         /// <param name="unitOfWork"></param>
         /// <returns></returns>
+        // ReSharper disable once MethodOverloadWithOptionalParameter
         public FSqlPartitionRepository<TEntity, TPrimaryKey> GetRepository<TEntity, TPrimaryKey>(object partitionId, string freeSqlName = null, IUnitOfWork unitOfWork = null)
               where TEntity : class
         {

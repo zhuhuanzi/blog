@@ -8,3 +8,11 @@
 /Demo/MongoDbStorage/bin/Debug/netcoreapp3.1
 /Demo/MongoDbStorage/obj
 /Demo/MongoDbStorage
+bin
+obj
+/Demo/DbStorage/obj
+/Demo/DbStorage/bin
+/Demo/FreeSqlDbStorage/bin
+/Demo/FreeSqlDbStorage/obj
+/Demo/MongoDbStorage/bin
+/Demo/MongoDbStorage/obj
