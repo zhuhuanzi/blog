@@ -1,28 +1,32 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DbStorage.Interface;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
-namespace DbStorage.Interface
+namespace FreeSqlDbStorage.Interface
 {
     /// <summary>
-    /// 关系型数据处理者storage - 单例
+    /// 单例
     /// </summary>
-    public interface IRelationalDatabaseProcessorStorage : IAnyStorage<IRelationalDatabaseProcessor>
+    public interface IFSqlProviderStorage : IAnyStorage<IFSqlProvider>
     {
 
     }
 
-    public class DefaultRelationalDatabaseProcessorStorage : IRelationalDatabaseProcessorStorage
+    public class DefaultFSqlProviderStorage : IFSqlProviderStorage
     {
-        public ConcurrentDictionary<string, IRelationalDatabaseProcessor> DataMap { get; private set; }
+        public ConcurrentDictionary<string, IFSqlProvider> DataMap { get; private set; }
 
-        public DefaultRelationalDatabaseProcessorStorage(IServiceProvider serviceProvider)
+
+        public DefaultFSqlProviderStorage(IServiceProvider serviceProvider)
         {
-            DataMap = new ConcurrentDictionary<string, IRelationalDatabaseProcessor>();
+            DataMap = new ConcurrentDictionary<string, IFSqlProvider>();
 
-            var tmpDataMap = serviceProvider.GetServices<IRelationalDatabaseProcessor>()
-                .ToDictionary(item => item.DbStorageProviderName);
+            var tmpDataMap = serviceProvider.GetServices<IFSqlProvider>()
+                .ToDictionary(item => item.ProviderName);
 
             foreach (var item in tmpDataMap)
             {
@@ -31,7 +35,7 @@ namespace DbStorage.Interface
         }
 
 
-        public void AddOrUpdate(string name, IRelationalDatabaseProcessor val)
+        public void AddOrUpdate(string name, IFSqlProvider val)
         {
             DataMap[name] = val;
         }
@@ -41,9 +45,9 @@ namespace DbStorage.Interface
             DataMap.Clear();
         }
 
-        public IRelationalDatabaseProcessor GetByName(string name, string defaultName)
+        public IFSqlProvider GetByName(string name, string defaultName)
         {
-            IRelationalDatabaseProcessor result;
+            IFSqlProvider result = null;
 
             if (name == null)
             {
@@ -68,7 +72,8 @@ namespace DbStorage.Interface
                 return;
             }
 
-            this.DataMap.TryRemove(name, out _);
+            this.DataMap.Remove(name, out IFSqlProvider result);
         }
     }
 }
+

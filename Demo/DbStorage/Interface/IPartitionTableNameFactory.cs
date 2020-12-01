@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace DbStorage.Interface
 {
     public interface IPartitionTableNameFactory
@@ -9,9 +5,9 @@ namespace DbStorage.Interface
         /// <summary>
         /// 获取表名
         /// </summary>
-        /// <param name="basicTable">分表键值</param>
-        /// <param name="partitionId">表名</param>
-        /// <returns></returns>
-        string GetTableName(string basicTable, object partitionId);
+        /// <param name="basicTableName">数据库名</param>
+        /// <param name="partitionId">分表键值</param>
+        /// <returns>表名</returns>
+        string GetTableName(string basicTableName, object partitionId);
     }
 }

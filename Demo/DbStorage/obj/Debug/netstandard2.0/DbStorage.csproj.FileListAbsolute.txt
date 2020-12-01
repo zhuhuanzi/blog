@@ -1,0 +1,4 @@
+C:\Users\Administrator\Desktop\blog\Demo\DbStorage\obj\Debug\netstandard2.0\DbStorage.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\blog\Demo\DbStorage\obj\Debug\netstandard2.0\DbStorage.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\blog\Demo\DbStorage\obj\Debug\netstandard2.0\DbStorage.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\blog\Demo\DbStorage\obj\Debug\netstandard2.0\DbStorage.csproj.CoreCompileInputs.cache

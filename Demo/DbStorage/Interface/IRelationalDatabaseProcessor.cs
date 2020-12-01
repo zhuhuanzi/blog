@@ -1,5 +1,6 @@
-using System;
+﻿using System;
 using System.Reflection;
+
 namespace DbStorage.Interface
 {
     /// <summary>
@@ -32,10 +33,11 @@ namespace DbStorage.Interface
         /// <returns></returns>
         string HandleEntityProperty(Type entityType, PropertyInfo propertyInfo);
 
+
         /// <summary>
         /// 处理字符串,根据数据库类型决定大写，小写，不变
         /// </summary>
-        /// <param name="entityName"></param>
+        /// <param name="input"></param>
         /// <returns></returns>
         string HandleString(string input);
 

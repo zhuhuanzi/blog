@@ -369,36 +369,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\覃欢\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\覃欢\\Desktop\\qinhuan-blog\\Demo\\DbStorage\\DbStorage.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\blog\\Demo\\DbStorage\\DbStorage.csproj",
       "projectName": "DbStorage",
-      "projectPath": "C:\\Users\\覃欢\\Desktop\\qinhuan-blog\\Demo\\DbStorage\\DbStorage.csproj",
-      "packagesPath": "C:\\Users\\覃欢\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\覃欢\\Desktop\\qinhuan-blog\\Demo\\DbStorage\\obj\\",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\blog\\Demo\\DbStorage\\DbStorage.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\blog\\Demo\\DbStorage\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "D:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\覃欢\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://10.1.2.202/api/v4/projects/9/packages/nuget/index.json": {},
+        "http://gitlab.cyanstream.com/api/v4/projects/9/packages/nuget/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
           "projectReferences": {}
         }
       },
@@ -410,7 +412,6 @@
     },
     "frameworks": {
       "netstandard2.0": {
-        "targetAlias": "netstandard2.0",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
@@ -433,7 +434,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

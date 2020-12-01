@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DbStorage.Interface
+﻿namespace DbStorage.Interface
 {
     public interface IPartitionEntity
     {

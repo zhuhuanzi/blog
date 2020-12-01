@@ -36,7 +36,7 @@ namespace DbStorage.Impl
 
         public IRelationalDatabaseProcessor GetByName(string name, string defaultName)
         {
-            IRelationalDatabaseProcessor result = null;
+            IRelationalDatabaseProcessor result;
 
             if (name == null)
             {
@@ -61,7 +61,7 @@ namespace DbStorage.Impl
                 return;
             }
 
-            this.DataMap.Remove(name, out IRelationalDatabaseProcessor result);
+            this.DataMap.TryRemove(name, out _);
         }
     }
 }

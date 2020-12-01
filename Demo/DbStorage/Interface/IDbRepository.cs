@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DbStorage.Interface
 {
@@ -14,6 +13,7 @@ namespace DbStorage.Interface
         /// <returns></returns>
         IDisposable ChangeProvider(string name);
 
+
         /// <summary>
         /// 获取当前的工作单元对象
         /// </summary>
@@ -25,6 +25,7 @@ namespace DbStorage.Interface
         /// </summary>
         /// <returns></returns>
         IDbUnitOfWork BeginUnitOfWork();
+
 
         /// <summary>
         /// 获取分表查询器
@@ -52,10 +53,9 @@ namespace DbStorage.Interface
         /// <summary>
         /// 批量插入数据
         /// </summary>
-        /// <param name="entities"></param>
+        /// <param name="entitys"></param>
         /// <param name="partitionId">分表键值</param>
-        /// <returns></returns>
-        TEntity INsert(List<TEntity> entities, object partitionId = null);
+        void Insert(List<TEntity> entitys, object partitionId = null);
 
         /// <summary>
         /// 更新数据
@@ -68,9 +68,9 @@ namespace DbStorage.Interface
         /// <summary>
         /// 批量更新数据
         /// </summary>
-        /// <param name="entities"></param>
+        /// <param name="entitys"></param>
         /// <param name="partitionId">分表键值</param>
-        void Update(List<TEntity> entities, object partitionId = null);
+        void Update(List<TEntity> entitys, object partitionId = null);
 
         /// <summary>
         /// 根据id删除数据
@@ -78,6 +78,7 @@ namespace DbStorage.Interface
         /// <param name="id"></param>
         /// <param name="partitionId">分表键值</param>
         void Delete(TPrimaryKey id, object partitionId = null);
+
 
         /// <summary>
         /// 根据id批量删除数据
@@ -87,10 +88,10 @@ namespace DbStorage.Interface
         void Delete(List<TPrimaryKey> ids, object partitionId = null);
 
         /// <summary>
-        /// 回去表数据总数
+        /// 获取表数据总数
         /// </summary>
         /// <param name="partitionId">分表键值</param>
-        /// <returns></returns>
+        /// <returns>总数</returns>
         long Count(object partitionId = null);
 
         /// <summary>
@@ -101,14 +102,13 @@ namespace DbStorage.Interface
         /// <summary>
         /// 回滚
         /// </summary>
-        void RollBack();
+        void Rollback();
 
         /// <summary>
-        /// 批量插入
+        /// 批量插入,必须指定 partitionId
         /// </summary>
-        /// <param name="entities">实体集</param>
-        /// <param name="partitionId">分表键值</param>
+        /// <param name="entities"></param>
+        /// <param name="partitionId"></param>
         void BatchInsert(ICollection<TEntity> entities, object partitionId);
-
     }
 }

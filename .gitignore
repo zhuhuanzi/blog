@@ -3,3 +3,8 @@
 ################################################################################
 
 /Demo/Demo/bin/Debug/netcoreapp3.1
+/Demo/FreeSqlDbStorage/bin/Debug/netstandard2.1
+/Demo/FreeSqlDbStorage/obj
+/Demo/MongoDbStorage/bin/Debug/netcoreapp3.1
+/Demo/MongoDbStorage/obj
+/Demo/MongoDbStorage
