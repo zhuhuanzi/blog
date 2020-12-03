@@ -45,6 +45,9 @@ namespace Demo
             
             Test(freeSql);
 
+
+            Console.ReadLine();
+
         }
 
 
@@ -55,8 +58,17 @@ namespace Demo
                 .Where(x => x.CreateTime.Date == DateTime.Now.Date).ToList();
 
 
+            var ret = new List<int>();
+            for (int i = 0; i < 1000; i++)
+            {
+                var todayData = data.FindAll(x => x.CreateTime.ToString("yyyy-MM-dd HH:mm")
+                    .Equals(DateTime.Now.ToString("yyyy-MM-dd HH:mm")));
+
+                ret.Add(todayData.Count);
+            }
 
 
+            Console.WriteLine(ret.Count);
         }
 
 
