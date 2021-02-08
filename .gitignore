@@ -17,3 +17,6 @@ obj
 /Demo/MongoDbStorage/bin
 /Demo/MongoDbStorage/obj
 /Demo/Demo/obj
+/Demo/Demo/Properties/PublishProfiles/FolderProfile.pubxml
+/Demo/.vs
+/Demo/DbStorage/obj
