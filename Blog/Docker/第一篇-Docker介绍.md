@@ -50,7 +50,7 @@ docker search查找镜像
 
 docker pull下载镜像
 
-docker rim -f强制删除镜像
+docker rm -f强制删除镜像
 
 docker images列出本地镜像
 
